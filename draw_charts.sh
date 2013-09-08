@@ -1,0 +1,2 @@
+#!/bin/bash
+rrdtool graph /home/pi/temperature.png --height=200 --width=750 --color=BACK#FFFFFF --start end-1d --vertical-label "°C"  --title "Temperatura de las últimas 24 horas" DEF:tempbmp085=weather.rrd:tempbmp085:AVERAGE DEF:humidity=weather.rrd:humidity:AVERAGE LINE2:tempbmp085#3366CC:"Temperatura" GPRINT:tempbmp085:LAST:"Temp Actual\: %2.2lf" GPRINT:tempbmp085:AVERAGE:"Temp Media\: %2.2lf" GPRINT:tempbmp085:MAX:"Temp max\: %2.2lf" GPRINT:tempbmp085:MIN:"Temp min\: %2.2lf"
