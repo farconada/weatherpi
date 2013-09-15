@@ -8,6 +8,7 @@ import sys
 import time
 import datetime
 import rrdtool
+import os
 
 # Initialise the BMP085 and use STANDARD mode (default value)
 # bmp = BMP085(0x77, debug=True)
@@ -19,7 +20,7 @@ bmp = BMP085(0x77)
 # bmp = BMP085(0x77, 2)  # HIRES Mode
 # bmp = BMP085(0x77, 3)  # ULTRAHIRES Mode
 
-rrdpath = './weather.rrd'
+rrdpath = os.path.dirname(__file__) + '/weather.rrd'
 
 # DElay in secons
 delay = 60
@@ -38,7 +39,7 @@ while True:
 	# enter 102350 since we include two decimal places in the integer value
 	# altitude = bmp.readAltitude(102350)
 
-	output = subprocess.check_output(["./Adafruit_DHT", "2302", "4"]);
+	output = subprocess.check_output([os.path.dirname(__file__) + "/Adafruit_DHT", "2302", "4"]);
 	matches = re.search("Temp =\s+([0-9.]+)", output)
 	if (not matches):
 	      time.sleep(3)
