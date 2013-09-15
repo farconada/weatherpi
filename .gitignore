@@ -1,2 +1,2 @@
-webserver/static/img/
+./webserver/static/img/*
 *.rrd
