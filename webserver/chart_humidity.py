@@ -42,7 +42,7 @@ def updateHumidityCharts():
               '--imgformat', 'PNG',
               '--width', cfg.CHART_WIDTH,
               '--height', cfg.CHART_HEIGHT,
-              '--start', 'end-1m',
+              '--start', 'end-4w',
               '--color', 'BACK#FFFFFF',
               '--vertical-label', '%',
               '--title', 'Humedad 1 Mes',
