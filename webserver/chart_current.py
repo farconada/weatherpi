@@ -43,7 +43,7 @@ def updateCurrentCharts():
               '--start', 'end-1m',
               '--color', 'BACK#FFFFFF',
               '--vertical-label', 'Wats',
-              '--title', 'Potencia aparente 1 nes',
+              '--title', 'Potencia aparente 1 mes',
               'DEF:power=' + cfg.RRDCURRENTPATH +':power:AVERAGE',
 	      'AREA:power#50b680:Potencia aparente para 230V',
               'GPRINT:power:AVERAGE:Media\: %2.2lf',
