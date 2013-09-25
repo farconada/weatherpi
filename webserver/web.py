@@ -4,6 +4,7 @@ import rrdtool
 from chart_temp import updateTempCharts
 from chart_humidity import updateHumidityCharts
 from chart_pressure import updatePressureCharts
+from chart_current import updateCurrentCharts
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -27,6 +28,11 @@ def humedad():
 def presion():
     updatePressureCharts()
     return render_template('pressure.html')
+
+@app.route("/potencia")
+def potencia():
+    updateCurrentCharts()
+    return render_template('current.html')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2>Potencia electrica aparente<h2>
+    <img class="img-responsive" src="{{ url_for('static', filename='img/current24.png') }}">
+    <img class="img-responsive" src="{{ url_for('static', filename='img/current1Week.png') }}">
+    <img class="img-responsive" src="{{ url_for('static', filename='img/current1Month.png') }}">
+  </div>
+{% endblock %}
