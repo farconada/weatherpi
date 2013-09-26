@@ -5,6 +5,7 @@ from chart_temp import updateTempCharts
 from chart_humidity import updateHumidityCharts
 from chart_pressure import updatePressureCharts
 from chart_current import updateCurrentCharts
+from chart_luz import updateLuzCharts
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -33,6 +34,11 @@ def presion():
 def potencia():
     updateCurrentCharts()
     return render_template('current.html')
+
+@app.route("/luz")
+def luz():
+    updateLuzCharts()
+    return render_template('luz.html')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0')

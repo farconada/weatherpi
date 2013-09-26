@@ -2,6 +2,7 @@
 rrdtool create weather_sensor.rrd --start N --step 400 \
 DS:tempdht22:GAUGE:600:U:U \
 DS:humidity:GAUGE:600:U:U \
+DS:lux:GAUGE:600:U:U \
 RRA:AVERAGE:0.5:1:1440 \
 RRA:AVERAGE:0.5:12:720 \
 RRA:AVERAGE:0.5:288:730
